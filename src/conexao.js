@@ -3,9 +3,9 @@ const knex = require('knex')({
     connection: {
         host: 'localhost',
         user: 'postgres',
-        password: 'cubos2412',
+        password: 'postgres',
         database: 'mini_insta'
     }
 });
 
-modules.exports = knex;
+module.exports = knex;

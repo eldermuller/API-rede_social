@@ -1,5 +1,5 @@
 const knex = require('../conexao');
-const bcrypt = require('knex');
+const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const senhaHash = require('../senhaHash');
 
@@ -11,7 +11,7 @@ const login = async (req, res) => {
     }
 
     try {
-        const usuario = await knex('usuario').where({ username }).first();
+        const usuario = await knex('usuarios').where({ username }).first();
 
         if (!usuario) {
             return res.status(404).json("O usuário não foi encontrado");
